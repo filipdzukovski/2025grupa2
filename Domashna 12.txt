@@ -1,0 +1,5 @@
+- Node proektot e vnatre vo folderot cas12
+- Go startuvate so komanda: node app.js
+
+Domashna:
+Da se dodade delete na users opcija vo redux
