@@ -10,3 +10,14 @@ export const getUsers = async () => {
         return await Promise.reject(err);
     }
 }
+
+export const deleteUser = async (id) => {
+    try{    
+        const res = await axios.delete(`${api.root}/users/${id}`)
+        return await Promise.resolve(id);
+
+    }
+    catch(err){
+        return await Promise.reject(err)
+    }
+}

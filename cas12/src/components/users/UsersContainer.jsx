@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import {UsersComponent} from './UsersComponent';
 import {useDispatch,useSelector} from 'react-redux';
-import {fetchUsers} from './duck/operations';
+import {fetchUsers,deleteUserFromApp} from './duck/operations';
 
 export default function UsersContainer(){
 
@@ -14,9 +14,13 @@ export default function UsersContainer(){
         dispatch(fetchUsers())
     },[dispatch])
 
+    function deleteUser(userId){
+        dispatch(deleteUserFromApp(userId))
+    }
+
     return(
         <div id='users-container'>
-            <UsersComponent listOfUsers={users} error={error} loading={isLoading} />
+            <UsersComponent listOfUsers={users} error={error} loading={isLoading} deleteUser={deleteUser}/>
         </div>
     )
 }

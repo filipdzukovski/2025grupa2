@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const UsersComponent = ({listOfUsers,error,loading}) => {
+export const UsersComponent = ({listOfUsers,error,loading,deleteUser}) => {
     
     return(
         <div id='users-component'>
@@ -11,6 +11,7 @@ export const UsersComponent = ({listOfUsers,error,loading}) => {
                         <th>Name</th>
                         <th>Username</th>
                         <th>Email</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,6 +21,7 @@ export const UsersComponent = ({listOfUsers,error,loading}) => {
                             <td>{user.name}</td>
                             <td>{user.username}</td>
                             <td>{user.email}</td>
+                            <td><button onClick={()=>{deleteUser(user.id)}}>Delete</button></td>
                         </tr>
                         )
                     })}
